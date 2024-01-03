@@ -1,13 +1,47 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import { Image } from "astro:assets"
+import nosotros from "../img/nosotros.jpg"
 ---
 
-<Layout title='Nosotros' description="Página de tienda de instrumentos musicales, guitarras, cursos, blogs y mas">
-  <main class="contenedor">
-		<h1 class="heading">Nosotros</h1>
-	</main>
+<Layout
+  title='Nosotros'
+  description='Página de tienda de instrumentos musicales, guitarras, cursos, blogs y mas'
+>
+  <main class='contenedor'>
+    <h1 class='heading'>Nosotros</h1>
+    <div class='contenido'>
+      <Image src={nosotros} alt='Imagen sobre nosotros' />
+
+      <div>
+        <p>
+          Phasellus et ex eu lacus lobortis suscipit eget at nunc. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Pellentesque massa dui, pellentesque in ex sit amet,
+          iaculis aliquet risus. Nulla viverra augue vitae tortor ultricies
+          suscipit.
+        </p>
+
+        <p>
+          Maecenas cursus ligula at diam gravida tincidunt. Nullam egestas
+          scelerisque consectetur. Nunc consectetur risus ut nulla fringilla, a
+          lobortis quam viverra. Vestibulum tristique, leo id interdum mattis,
+          metus tellus congue ipsum, sed porttitor sapien augue in ante.
+        </p>
+      </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
- 
+  .contenido {
+    display: grid;
+    gap: 4rem;
+  }
+  @media (min-width: 768px) {
+    .contenido {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+  }
 </style>
